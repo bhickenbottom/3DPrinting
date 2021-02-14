@@ -1,15 +1,15 @@
 // Options
-outerRadius = 10;
-innerRadius = 7;
-length = 30;
+outerRadius = 20;
+innerRadius = 17;
+height = 40;
 floorThickness = 3;
 
 // Tube
 difference()
 {
-    cylinder(length, outerRadius, outerRadius, center=false, $fn = 32);        
+    cylinder(height, outerRadius, outerRadius, center=false, $fn = 32);      
     translate([0, 0, floorThickness])
     {
-        cylinder(length, innerRadius, innerRadius, center=false, $fn = 32);
+        cylinder(height, innerRadius, innerRadius, center=false, $fn = 32);
     }
 }

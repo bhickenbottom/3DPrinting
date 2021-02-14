@@ -42,6 +42,10 @@ difference()
         {        
             cube([boxInnerWidth, boxWallThickness, boxInnerHeight + boxLidPlugThickness], center=false);
         }
+        translate([boxWallThickness, boxInnerDepth + boxWallThickness, boxFloorThickness])
+        {        
+            cube([boxInnerWidth, boxWallThickness, boxInnerHeight + boxLidPlugThickness], center=false);
+        }
     }    
     translate([holeOffset, holeOffset, -boxFloorThickness])
     {
@@ -66,7 +70,7 @@ if (includeLid)
 }
 
 // Dividers (X)
-if (xDividers > 0)
+if (xDividers > 1)
 {
     xStep = boxInnerWidth / xDividers;
     for (x =[1:xDividers - 1])
@@ -79,7 +83,7 @@ if (xDividers > 0)
 }
 
 // Dividers (Y)
-if (yDividers > 0)
+if (yDividers > 1)
 {
     yStep = boxInnerDepth / yDividers;
     for (y =[1:yDividers - 1])
