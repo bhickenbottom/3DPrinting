@@ -1,3 +1,6 @@
+// Global Options
+$fn = 64;
+
 // Options
 x = 2;
 y = 1;
@@ -24,7 +27,7 @@ union()
                         cube([7.95, 7.9, 9.6]);
                         translate([3.9, 3.9, 9.6])
                         {
-                           cylinder(1.8, 2.4 - pegTolerance, 2.4 - pegTolerance, center=false, $fn=64);
+                           cylinder(1.8, 2.4 - pegTolerance, 2.4 - pegTolerance, center=false);
                         }                    
                     }
                     union()

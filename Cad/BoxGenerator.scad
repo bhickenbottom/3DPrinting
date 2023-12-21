@@ -1,3 +1,6 @@
+// Global Options
+$fn = 64;
+
 // Options
 boxInnerWidth = 30;
 boxInnerDepth = 20;
@@ -9,7 +12,6 @@ boxLidThickness = 3;
 boxLidPlugThickness = 3;
 boxTolerance = 0.25;
 boxPieceMargin = 10;
-holeOffset = 6;
 holeRadius = 2;
 xDividers = 2;
 yDividers = 2;
@@ -47,9 +49,12 @@ difference()
             cube([boxInnerWidth, boxWallThickness, boxInnerHeight + boxLidPlugThickness], center=false);
         }
     }    
-    translate([holeOffset, holeOffset, -boxFloorThickness])
+    translate([-boxWallThickness, boxWallThickness + holeRadius, boxFloorThickness + holeRadius])
     {
-        cylinder(boxFloorThickness * 3, holeRadius, holeRadius, center=false, $fn = 32);
+        rotate([0, 90, 0])
+        { 
+            cylinder(boxWallThickness * 3, holeRadius, holeRadius, center=false);
+        }
     }
 }
 
